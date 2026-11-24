@@ -8,7 +8,7 @@ exigirAcceso();
 <body>
 <h1>Bienvenido/a, <?= e($_SESSION['alias'] ?? '') ?></h1>
 <p>Has iniciado sesión correctamente.</p>
-<p><a href="canciones.php">Administrar catálogo musical</a></p>
+<p><a href="canciones-ajax.php">Administración AJAX</a></p>
 <p><a href="12-catalogo-json.php">Ver catálogo JSON</a></p>
 <section id="jukebox-player">
     <h2>Reproductor Jukebox</h2>
@@ -38,7 +38,8 @@ exigirAcceso();
     <?= campoCsrf() ?>
     <button type="submit">Cerrar sesión</button>
 </form>
-<script src="./scripts/reproductor.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 <script src="./scripts/reproductor.js"></script>
+
 </body></html>

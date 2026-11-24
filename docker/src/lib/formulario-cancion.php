@@ -1,20 +1,18 @@
 <?php
 declare(strict_types=1);
 
-function mostrarFormularioCancion(array $v, array $errores, string $boton, string $accion, ?int $id = null): void
-{
-    $categorias = ['electronica' => 'Electrónica', 'rock' => 'Rock', 'bandas-sonoras' => 'Bandas sonoras'];
-    
-$audios = [
-    'audio/beat-it.mp3' => 'Beat It',
-    'audio/come-as-you-are.mp3' => 'Come As You Are',
-    'audio/devuelveme-a-mi-chica.mp3' => 'Devuélveme a mi chica',
-    'audio/die-versteinerung.mp3' => 'Die Versteinerung',
-    'audio/marta-tiene-un-marcapasos.mp3' => 'Marta tiene un marcapasos',
-    'audio/mozart-symphony-40.mp3' => 'Sinfonía n.º 40 de Mozart',
-    'audio/smells-like-teen-spirit.mp3' => 'Smells Like Teen Spirit',
-    'audio/thriller.mp3' => 'Thriller'
-];
+require_once __DIR__ . '/config-canciones.php';
+
+function mostrarFormularioCancion(
+    array $v,
+    array $errores,
+    string $boton,
+    string $accion,
+    ?int $id = null
+): void {
+    $categorias = categoriasCanciones();
+    $audios = audiosCanciones();
+
 
     ?>
     <form method="post" action="<?= e($accion) ?>">

@@ -1,22 +1,21 @@
 <?php
 declare(strict_types=1);
 
+require_once __DIR__ . '/config-canciones.php';
+
 function validarDatosCancion(array $entrada): array
 {
-    $categorias = ['electronica', 'rock', 'bandas-sonoras'];
-    
-$audios = [
-    'audio/beat-it.mp3',
-    'audio/come-as-you-are.mp3',
-    'audio/devuelveme-a-mi-chica.mp3',
-    'audio/die-versteinerung.mp3',
-    'audio/marta-tiene-un-marcapasos.mp3',
-    'audio/mozart-symphony-40.mp3',
-    'audio/smells-like-teen-spirit.mp3',
-    'audio/thriller.mp3'
-];
+    $categorias = array_keys(categoriasCanciones());
+    $audios = array_keys(audiosCanciones());
 
-    $valores = ['title' => '', 'artist' => '', 'category' => '', 'duration' => '', 'src' => ''];
+    $valores = [
+        'title' => '',
+        'artist' => '',
+        'category' => '',
+        'duration' => '',
+        'src' => ''
+    ];
+
     $datos = [];
     $errores = [];
 
